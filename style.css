@@ -22,6 +22,12 @@ header {
     z-index: 100;
     border-bottom: 1px solid rgba(138, 103, 241, 0.18);
     backdrop-filter: blur(12px);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+header.hidden {
+    transform: translateY(-120%);
+    opacity: 0;
 }
 
 nav ul {
@@ -94,6 +100,18 @@ section {
     border-radius: 32px;
     border: 1px solid rgba(196, 190, 255, 0.4);
     box-shadow: 0 16px 40px rgba(80, 61, 185, 0.06);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section + section {
