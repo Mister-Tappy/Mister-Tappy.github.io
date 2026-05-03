@@ -100,6 +100,8 @@ section {
     border-radius: 32px;
     border: 1px solid rgba(196, 190, 255, 0.4);
     box-shadow: 0 16px 40px rgba(80, 61, 185, 0.06);
+    position: relative;
+    z-index: 1;
 }
 
 .reveal {
@@ -254,18 +256,49 @@ p {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .education-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 24px;
     border: 1px solid rgba(138, 103, 241, 0.18);
     box-shadow: 0 14px 30px rgba(138, 103, 241, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
 }
 
-.education-card p {
-    margin: 0.75rem 0 0;
+.education-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 28px 50px rgba(138, 103, 241, 0.16);
+}
+
+.school-logo {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 14px;
+    object-fit: cover;
+    background-color: #ddd;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover .school-logo {
+    transform: scale(1.1);
+}
+
+.edu-info {
+    flex: 1;
+}
+
+.edu-info p {
+    margin: 0.5rem 0 0;
 }
 
 .edu-year {
@@ -278,6 +311,46 @@ p {
 
 .edu-detail {
     color: #555;
+}
+
+.edu-detail-popup {
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    background: rgba(24, 18, 70, 0.95);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(116, 185, 255, 0.6);
+    box-shadow: 0 30px 60px rgba(138, 103, 241, 0.35);
+    width: 260px;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.edu-detail-popup img {
+    width: 100%;
+    height: 140px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    background-color: rgba(138, 103, 241, 0.2);
+}
+
+.edu-detail-popup p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.education-card:hover .edu-detail-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* Skills Section */
@@ -294,7 +367,7 @@ p {
     background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(232,225,255,0.86));
     border: 1px solid rgba(138, 103, 241, 0.2);
     box-shadow: 0 16px 32px rgba(80, 61, 185, 0.08);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
@@ -331,44 +404,85 @@ p {
     z-index: 1;
 }
 
+.skill-chip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .skill-chip {
     padding: 0.75rem 1rem;
     border-radius: 999px;
     background: rgba(138, 103, 241, 0.12);
     color: #2f2f3c;
     font-weight: 600;
-    transition: background 0.3s ease, transform 0.25s ease;
+    transition: background 0.3s ease, transform 0.25s ease, all 0.3s ease;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.skill-card:hover .skill-chip {
-    background: rgba(116, 185, 255, 0.18);
+.skill-chip::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #a29bfe 0%, #74b9ff 25%, #8e44ad 50%, #5da5ff 75%, #a29bfe 100%);
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.skill-chip:hover::before {
+    opacity: 1;
+    animation: borderShift 4s linear infinite;
+}
+
+.skill-chip:hover {
+    background: rgba(24, 18, 70, 0.9);
+    color: #fff;
     transform: translateY(-2px);
 }
 
-.skill-detail {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.25rem;
+.skill-detail-popup {
+    position: absolute;
+    bottom: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
     opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.35s ease, max-height 0.35s ease, transform 0.35s ease;
-    transform: translateY(10px);
+    pointer-events: none;
+    z-index: 1000;
+    background: rgba(24, 18, 70, 0.95);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(116, 185, 255, 0.6);
+    box-shadow: 0 20px 50px rgba(138, 103, 241, 0.25);
+    width: 240px;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.skill-card:hover .skill-detail {
-    opacity: 1;
-    max-height: 180px;
-    transform: translateY(0);
-}
-
-.skill-detail-img {
-    width: 96px;
-    height: 96px;
-    border-radius: 18px;
+.skill-detail-popup img {
+    width: 100%;
+    height: 120px;
+    border-radius: 16px;
     object-fit: cover;
-    background-color: #ddd;
+    margin-bottom: 0.75rem;
+    background-color: rgba(138, 103, 241, 0.2);
+}
+
+.skill-detail-popup p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.skill-chip-wrapper:hover .skill-detail-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
 }
 
 .skill-card p {
@@ -539,5 +653,34 @@ footer .social-links a:hover {
 
     footer .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skill-detail-popup {
+        bottom: auto;
+        top: calc(100% + 0.75rem);
+        width: 220px;
+        font-size: 0.85rem;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .school-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .edu-detail-popup {
+        bottom: auto;
+        top: calc(100% + 0.75rem);
+        width: 240px;
+        font-size: 0.85rem;
     }
 }
