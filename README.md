@@ -1,5 +1,5 @@
 # Mister-Tappy.github.io
-# Hi there, I'm [ชื่อของคุณ] 👋
+# Hi there, I'm Tap 👋
 
 ### 👨‍💻 Full Stack Developer | Game Developer | Student
 
@@ -42,8 +42,8 @@ My personal site built with Astro and Bootstrap for high performance and clean U
 
 ### 📫 Reach Out to Me
 
-- **Portfolio:** [[Link เว็บไซต์ของคุณ](https://mister-tappy.github.io)]
-- **Email:** [tapthodpradit@gmail.com]
+- **Portfolio:** [Link](https://mister-tappy.github.io)
+- **Email:** tapthodpradit@gmail.com
 
 ---
 
