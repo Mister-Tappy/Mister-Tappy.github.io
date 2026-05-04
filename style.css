@@ -15,7 +15,7 @@ body {
 header {
     background-color: rgba(255, 255, 255, 0.55);
     color: #000;
-    padding: 1rem;
+    padding: 2rem 1.25rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -30,11 +30,40 @@ header.hidden {
     opacity: 0;
 }
 
+nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
+}
+
+#burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1010;
+    transition: left 0.3s ease;
+}
+
+#burger-menu.open {
+    left: 0.5rem;
 }
 
 nav li {
@@ -86,11 +115,51 @@ nav a:hover {
     color: #333;
 }
 
+nav li.translate-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+nav li.translate-toggle::after {
+    display: none;
+}
+
+nav li.translate-toggle:hover {
+    transform: translateY(-50%);
+    box-shadow: none;
+    background: transparent;
+}
+
+.translate-toggle button {
+    border: 1px solid rgba(138, 103, 241, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f1f1f;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    min-width: 3rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.translate-toggle button:hover {
+    background: rgba(138, 103, 241, 0.18);
+    transform: translateY(-1px);
+}
+
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    padding-top: 8rem;
+    padding-top: 9rem;
 }
 
 section {
@@ -320,7 +389,7 @@ p {
     transform: translateX(-50%) translateY(10px);
     opacity: 0;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 2000;
     background: rgba(24, 18, 70, 0.95);
     color: #fff;
     padding: 1rem;
@@ -452,7 +521,7 @@ p {
     transform: translateX(-50%) translateY(10px);
     opacity: 0;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 3000;
     background: rgba(24, 18, 70, 0.95);
     color: #fff;
     padding: 1rem;
@@ -474,7 +543,7 @@ p {
 }
 
 .skill-detail-popup p {
-    color: #e0e0e0;
+    color: #ffffff;
     font-size: 0.9rem;
     margin: 0;
 }
@@ -487,7 +556,7 @@ p {
 
 .skill-card p {
     margin: 0.75rem 0 0;
-    color: #555;
+    color: #c5c5c5;
     position: relative;
     z-index: 1;
 }
@@ -508,6 +577,63 @@ p {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(138, 103, 241, 0.18);
     box-shadow: 0 18px 40px rgba(138, 103, 241, 0.08);
+}
+
+.experience-card-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.experience-card-link:hover {
+    transform: translateY(-4px);
+}
+
+.experience-link-note {
+    margin-top: 1rem;
+    color: #6a4ce4;
+    font-weight: 600;
+}
+
+.activities-photos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.activity-photo-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    border: 1px solid rgba(138, 103, 241, 0.18);
+    box-shadow: 0 18px 40px rgba(138, 103, 241, 0.08);
+    overflow: hidden;
+}
+
+.activity-photo-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.activity-photo-card h3 {
+    margin: 1rem;
+}
+
+.activity-summary {
+    margin-top: 1.5rem;
+    background: #ffffff;
+    border-radius: 28px;
+    border: 1px solid rgba(138, 103, 241, 0.18);
+    padding: 1.75rem;
+    box-shadow: 0 24px 60px rgba(138, 103, 241, 0.08);
+}
+
+.activity-summary p {
+    margin: 0;
+    color: #333;
+    line-height: 1.8;
 }
 
 .experience-img {
@@ -592,6 +718,51 @@ footer .social-links a:hover {
     color: #000;
 }
 
+.back-home {
+    display: inline-block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(148, 102, 255, 0.3), rgba(90, 108, 255, 0.2), rgba(148, 102, 255, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.back-home:hover {
+    color: #fff;
+    box-shadow: 0 0 24px rgba(114, 84, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.back-home:hover::before {
+    opacity: 1;
+    animation: hoverGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes hoverGlow {
+    0%, 100% {
+        background: linear-gradient(90deg, rgba(148, 102, 255, 0.45), rgba(90, 108, 255, 0.35), rgba(148, 102, 255, 0.45));
+    }
+    50% {
+        background: linear-gradient(90deg, rgba(90, 108, 255, 0.45), rgba(148, 102, 255, 0.35), rgba(90, 108, 255, 0.45));
+    }
+}
+
 @keyframes borderShift {
     0% {
         background-position: 0% 50%;
@@ -615,13 +786,51 @@ footer .social-links a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav {
+        justify-content: center;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
     nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(138, 103, 241, 0.18);
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
+        padding: 1rem 0;
+        align-items: center;
+    }
+
+    nav ul.open {
+        display: flex;
     }
 
     nav li {
-        padding: 0.5rem;
+        padding: 0.55rem 0.9rem;
+    }
+
+    nav li.translate-toggle {
+        position: static;
+        transform: none;
+        right: auto;
+        top: auto;
+        margin-top: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .translate-toggle button {
+        width: 100%;
+        max-width: 120px;
     }
 
     .contact-grid {
@@ -638,7 +847,7 @@ footer .social-links a:hover {
 
     main {
         padding: 1rem;
-        padding-top: 5rem; /* Account for fixed nav */
+        padding-top: 7rem; /* Account for fixed nav */
     }
 
     .experience-table {
@@ -649,6 +858,49 @@ footer .social-links a:hover {
     .experience-img {
         width: 100%;
         height: auto;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-card {
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .profile-pic {
+        width: 100%;
+        height: 240px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    .skill-card,
+    .experience-card,
+    .education-card,
+    article,
+    footer {
+        padding: 1.25rem;
+    }
+
+    .education-grid,
+    .skills-grid,
+    .experience-grid {
+        gap: 1rem;
+    }
+
+    .skill-detail-popup,
+    .edu-detail-popup {
+        width: 200px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
     }
 
     footer .contact-grid {
@@ -684,3 +936,62 @@ footer .social-links a:hover {
         font-size: 0.85rem;
     }
 }
+
+@media (max-width: 420px) {
+    header {
+        padding: 0.75rem 0.9rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    nav li {
+        padding: 0.5rem 0.85rem;
+    }
+
+    .translate-toggle button {
+        max-width: 100px;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 0.75rem;
+        padding-top: 6rem;
+    }
+
+    .hero-card {
+        gap: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .experience-card,
+    .skill-card,
+    .education-card,
+    article,
+    footer {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.25rem 0.9rem;
+    }
+
+    .activities-photos {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-photo-card h3 {
+        margin: 0.85rem;
+        font-size: 1rem;
+    }
+}
+

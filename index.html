@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,17 @@
 <body>
     <header>
         <nav>
+            <button id="burger-menu" aria-label="Menu">☰</button>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero" data-i18n="home">หน้าแรก</a></li>
+                <li><a href="#experience" data-i18n="experience">ประสบการณ์ & กิจกรรม</a></li>
+                <li><a href="#skills" data-i18n="skills">ทักษะ</a></li>
+                <li><a href="#blog" data-i18n="blog">บล็อก</a></li>
+                <li><a href="#education" data-i18n="education">การศึกษา</a></li>
+                <li><a href="#contact" data-i18n="contact">ติดต่อ</a></li>
+                <li class="translate-toggle">
+                    <button id="translate-toggle" type="button" aria-label="สลับภาษา">TH</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -25,141 +29,172 @@
             <div class="hero-card">
                 <img src="img/Profilepic.jpg" alt="Profile Picture" class="profile-pic">
                 <div class="hero-text">
-                    <h1><a href="index.html">Tap Thobpradit</a></h1>
-                    <p class="nickname">Tap</p>
-                    <p class="details">18 October 2008 • 17</p>
+                    <h1><a href="index.html" data-i18n="name">ทัพพ์ ทบประดิษฐ์</a></h1>
+                    <p class="nickname" data-i18n="nickname">Tap</p>
+                    <p class="details" data-i18n="details">18 ตุลาคม 2551 • 17</p>
                     <p class="email">tapthodpradit@gmail.com</p>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="reveal">
-            <h2>Experience & Activities</h2>
+            <h2 data-i18n="experienceTitle">ประสบการณ์ & กิจกรรม</h2>
             <div class="experience-grid">
-                <div class="experience-card">
+                <a class="experience-card experience-card-link" href="activities1.html">
                     <img src="placeholder-image.jpg" alt="Experience Image" class="experience-img">
                     <div class="experience-text">
-                        <p><strong>Year:</strong> 2020</p>
-                        <p><strong>Activity:</strong> Project Name</p>
-                        <p><strong>Description:</strong> A short description of the activity or project.</p>
+                        <p><strong data-i18n="experienceYearLabel">ปี:</strong> <span data-i18n="experienceYear">2020</span></p>
+                        <p><strong data-i18n="experienceActivityLabel">กิจกรรม:</strong> <span data-i18n="experienceActivity">ชื่อโปรเจค</span></p>
+                        <p><strong data-i18n="experienceDescriptionLabel">รายละเอียด:</strong> <span data-i18n="experienceDescription">คำอธิบายสั้น ๆ ของกิจกรรมหรือโปรเจค</span></p>
+                        <p class="experience-link-note" data-i18n="experienceLinkNote">คลิกเพื่อดูรายละเอียดกิจกรรมเพิ่มเติม</p>
                     </div>
-                </div>
+                </a>
+                <!-- Duplicate and add more experience cards as needed -->
+                 <a class="experience-card experience-card-link" href="activities2.html">
+                    <img src="placeholder-image.jpg" alt="Experience Image" class="experience-img">
+                    <div class="experience-text">
+                        <p><strong data-i18n="experienceYearLabel">ปี:</strong> <span data-i18n="experienceYear">2020</span></p>
+                        <p><strong data-i18n="experienceActivityLabel">กิจกรรม:</strong> <span data-i18n="experienceActivity">ชื่อโปรเจค</span></p>
+                        <p><strong data-i18n="experienceDescriptionLabel">รายละเอียด:</strong> <span data-i18n="experienceDescription">คำอธิบายสั้น ๆ ของกิจกรรมหรือโปรเจค</span></p>
+                        <p class="experience-link-note" data-i18n="experienceLinkNote">คลิกเพื่อดูรายละเอียดกิจกรรมเพิ่มเติม</p>
+                    </div>
+                </a>
+                <!-- Duplicate and add more experience cards as needed -->
+                <a class="experience-card experience-card-link" href="activities3.html">
+                    <img src="placeholder-image.jpg" alt="Experience Image" class="experience-img">
+                    <div class="experience-text">
+                        <p><strong data-i18n="experienceYearLabel">ปี:</strong> <span data-i18n="experienceYear">2020</span></p>
+                        <p><strong data-i18n="experienceActivityLabel">กิจกรรม:</strong> <span data-i18n="experienceActivity">ชื่อโปรเจค</span></p>
+                        <p><strong data-i18n="experienceDescriptionLabel">รายละเอียด:</strong> <span data-i18n="experienceDescription">คำอธิบายสั้น ๆ ของกิจกรรมหรือโปรเจค</span></p>
+                        <p class="experience-link-note" data-i18n="experienceLinkNote">คลิกเพื่อดูรายละเอียดกิจกรรมเพิ่มเติม</p>
+                    </div>
+                </a>
+                <!-- Duplicate and add more experience cards as needed -->
+                <a class="experience-card experience-card-link" href="activities4.html">
+                    <img src="placeholder-image.jpg" alt="Experience Image" class="experience-img">
+                    <div class="experience-text">
+                        <p><strong data-i18n="experienceYearLabel">ปี:</strong> <span data-i18n="experienceYear">2020</span></p>
+                        <p><strong data-i18n="experienceActivityLabel">กิจกรรม:</strong> <span data-i18n="experienceActivity">ชื่อโปรเจค</span></p>
+                        <p><strong data-i18n="experienceDescriptionLabel">รายละเอียด:</strong> <span data-i18n="experienceDescription">คำอธิบายสั้น ๆ ของกิจกรรมหรือโปรเจค</span></p>
+                        <p class="experience-link-note" data-i18n="experienceLinkNote">คลิกเพื่อดูรายละเอียดกิจกรรมเพิ่มเติม</p>
+                    </div>
+                </a>
                 <!-- Duplicate and add more experience cards as needed -->
             </div>
         </section>
 
         <section id="skills" class="reveal">
-            <h2>Skills & Languages</h2>
+            <h2 data-i18n="skillsTitle">ทักษะ & ภาษา</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Abilities</h3>
+                    <h3 data-i18n="abilitiesTitle">ความสามารถ</h3>
                     <div class="skill-tags">
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">Photography</span>
+                            <span class="skill-chip" data-i18n="skillPhotography">Photography</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-skill1.jpg" alt="Photography" class="detail-img">
-                                <p>ชอบถ่ายรูปวิว ภูเขา ทะเล เมือง</p>
+                                <p data-i18n="skillPhotographyDesc">ชอบถ่ายรูปวิว ภูเขา ทะเล เมือง</p>
                             </div>
                         </div>
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">Playing Music</span>
+                            <span class="skill-chip" data-i18n="skillPlayingMusic">Playing Music</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-skill2.jpg" alt="Music" class="detail-img">
-                                <p>เล่น Guitar Keyboard ได้</p>
+                                <p data-i18n="skillPlayingMusicDesc">เล่น Guitar Keyboard ได้</p>
                             </div>
                         </div>
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">Programming</span>
+                            <span class="skill-chip" data-i18n="skillProgramming">Programming</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-skill3.jpg" alt="Programming" class="detail-img">
-                                <p>สามารถใช้พื้นฐานของ <br>C# Python HTML CSS JAVASCRIPT JAVA .</p>
+                                <p data-i18n="skillProgrammingDesc">สามารถใช้พื้นฐานของ <br>C# Python HTML CSS JAVASCRIPT JAVA .</p>
                             </div>
                         </div>
                     </div>
-                    <p>ความสามารถที่ใช้งานได้จริงและมีประสบการณ์จริิง</p>
+                    <p data-i18n="abilitiesDescription">ความสามารถที่ใช้งานได้จริงและมีประสบการณ์จริง</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Languages</h3>
+                    <h3 data-i18n="languagesTitle">ภาษา</h3>
                     <div class="skill-tags">
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">Thai</span>
+                            <span class="skill-chip" data-i18n="skillThai">Thai</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-thai.jpg" alt="Thai" class="detail-img">
-                                <p>เป็นภาษาแม่ ภาษาหลักในการสื่อสาร อ่านเขียนกับผู้อื่น</p>
+                                <p data-i18n="skillThaiDesc">เป็นภาษาแม่ ภาษาหลักในการสื่อสาร อ่านเขียนกับผู้อื่น</p>
                             </div>
                         </div>
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">English</span>
+                            <span class="skill-chip" data-i18n="skillEnglish">English</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-english.jpg" alt="English" class="detail-img">
-                                <p>สามารถอ่านเขียนได้ แต่การสื่อสารสามารถสื่อสารได้ระดับนึง</p>
+                                <p data-i18n="skillEnglishDesc">สามารถอ่านเขียนได้ แต่การสื่อสารสามารถสื่อสารได้ระดับนึง</p>
                             </div>
                         </div>
                         <div class="skill-chip-wrapper">
-                            <span class="skill-chip">Creative Writing</span>
+                            <span class="skill-chip" data-i18n="skillCreativeWriting">Creative Writing</span>
                             <div class="skill-detail-popup">
                                 <img src="placeholder-writing.jpg" alt="Writing" class="detail-img">
-                                <p>สามารถเขียนบรรยายเรียบเรียงภาษาได้ดี</p>
+                                <p data-i18n="skillCreativeWritingDesc">สามารถเขียนบรรยายเรียบเรียงภาษาได้ดี</p>
                             </div>
                         </div>
                     </div>
-                    <p>ภาษาที่ใช้ในการสื่อสาร เรียนรู้</p>
+                    <p data-i18n="languagesDescription">ภาษาที่ใช้ในการสื่อสาร เรียนรู้</p>
                 </div>
             </div>
         </section>
 
         <section id="blog" class="reveal">
-            <h2>Blog</h2>
+            <h2 data-i18n="blogTitle">บล็อก</h2>
             <article>
-                <h3>Article Title 1</h3>
-                <p>Short summary of the article...</p>
-                <a href="#">Read more</a>
+                <h3 data-i18n="article1Title">บทความ 1</h3>
+                <p data-i18n="article1Summary">สรุปสั้น ๆ ของบทความ...</p>
+                <a href="#" data-i18n="article1Link">อ่านเพิ่มเติม</a>
             </article>
             <article>
-                <h3>Article Title 2</h3>
-                <p>Short summary of the article...</p>
-                <a href="#">Read more</a>
+                <h3 data-i18n="article2Title">บทความ 2</h3>
+                <p data-i18n="article2Summary">สรุปสั้น ๆ ของบทความ...</p>
+                <a href="#" data-i18n="article2Link">อ่านเพิ่มเติม</a>
             </article>
             <!-- Add more articles as needed -->
         </section>
 
         <section id="education" class="reveal">
-            <h2>Education</h2>
+            <h2 data-i18n="education">Education</h2>
             <div class="education-grid">
                 <div class="education-card">
                     <img src="img/Duangtawan.png" alt="School 1 Logo" class="school-logo">
                     <div class="edu-info">
                         <p class="edu-year"><strong>2011 - 2013</strong></p>
-                        <p class="edu-name">Duangtawan Kindergarten</p>
+                        <p class="edu-name" data-i18n="eduSchool1Name">อนุบาลดวงตะวัน</p>
                         <p class="edu-detail">GPA: -</p>
                     </div>
                     <div class="edu-detail-popup">
                         <img src="img/Duangtawan.png" alt="School 1" class="edu-detail-img">
-                        <p>โรงเรียนอนุบาลดวงตะวัน เปิดการเรียนการสอนตั้งแต่ระดับชั้น เตรียมอนุบาล ถึงระดับชั้นอนุบาล 3 ที่มุ่งเน้นเตรียมความพร้อมเด็กก่อนวัยเรียนให้พัฒนาทุก ๆ ด้านอย่างสมดุล</p>
+                        <p data-i18n="eduDetail1">โรงเรียนอนุบาลดวงตะวัน เปิดการเรียนการสอนตั้งแต่ระดับชั้น เตรียมอนุบาล ถึงระดับชั้นอนุบาล 3 ที่มุ่งเน้นเตรียมความพร้อมเด็กก่อนวัยเรียนให้พัฒนาทุก ๆ ด้านอย่างสมดุล</p>
                     </div>
                 </div>
                 <div class="education-card">
                     <img src="img/Sarasas.png" alt="School 2 Logo" class="school-logo">
                     <div class="edu-info">
                         <p class="edu-year"><strong>2013 - 2023</strong></p>
-                        <p class="edu-name">Sarasas Witaed Klongluang</p>
+                        <p class="edu-name" data-i18n="eduSchool2Name">สารสาสน์วิเทศคลองหลวง</p>
                         <p class="edu-detail">GPA: 3.8</p>
                     </div>
                     <div class="edu-detail-popup">
                         <img src="img/Sarasas.png" alt="School 2" class="edu-detail-img">
-                        <p>เปิดสอนแผนกสองภาษา (Bilingual Programme) และแผนกสามัญ( Mini – Bilingual Programme) ภายใต้ การบริหารงานในเครือสารสาสน์</p>
+                        <p data-i18n="eduDetail2">เปิดสอนแผนกสองภาษา (Bilingual Programme) และแผนกสามัญ( Mini – Bilingual Programme) ภายใต้ การบริหารงานในเครือสารสาสน์</p>
                     </div>
                 </div>
                 <div class="education-card">
                     <img src="img/Thamasat.png" alt="School 3 Logo" class="school-logo">
                     <div class="edu-info">
                         <p class="edu-year"><strong>2024 - Present</strong></p>
-                        <p class="edu-name">Thammasat Khlong Luang Witthayakhom</p>
+                        <p class="edu-name" data-i18n="eduSchool3Name">ธรรมศาสตร์คลองหลวงวิทยาคม</p>
                         <p class="edu-detail">GPA: 4.0</p>
                     </div>
                     <div class="edu-detail-popup">
                         <img src="img/Thamasat.png" alt="School 3" class="edu-detail-img">
-                        <p>โรงเรียนในสวัสดิการแห่งมหาวิทยาลัยธรรมศาสตร์ เป็นโรงเรียนรัฐบาลในสังกัดสำนักงานเขตพื้นที่การศึกษามัธยมศึกษาปทุมธานี ประเภทโรงเรียนมัธยมศึกษาขนาดใหญ่พิเศษ</p>
+                        <p data-i18n="eduDetail3">โรงเรียนในสวัสดิการแห่งมหาวิทยาลัยธรรมศาสตร์ เป็นโรงเรียนรัฐบาลในสังกัดสำนักงานเขตพื้นที่การศึกษามัธยมศึกษาปทุมธานี ประเภทโรงเรียนมัธยมศึกษาขนาดใหญ่พิเศษ</p>
                     </div>
                 </div>
             </div>
@@ -167,18 +202,18 @@
     </main>
 
     <footer id="contact" class="reveal">
-        <h2>Contact Info</h2>
+        <h2 data-i18n="contactTitle">ข้อมูลติดต่อ</h2>
         <div class="contact-grid">
-            <p><strong>Phone:</strong>+66 0992218399</p>
-            <p><strong>Address:</strong> 99/56 Moo 6, Phontawiwat Village Project 3, <br>Khlong Song Subdistrict, Khlong Luang District, Pathum Thani Province</p>
+            <p><strong data-i18n="phoneLabel">โทรศัพท์:</strong>+66 0992218399</p>
+            <p><strong data-i18n="addressLabel">ที่อยู่:</strong> <span data-i18n="address">99/56 หมู่ 6,หมู่บ้านพรทวีวัฒน์โครงการ 3,<br>ตำบลคลองสอง, อำเภอคลองหลวง,<br>จังหวัดปทุมธานี</span></p>
             <div class="social-links">
-                <a href="https://www.facebook.com/TapTDit/" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/tapdontknowname/" target="_blank">Instagram</a>
-                <a href="https://github.com/Mister-Tappy" target="_blank">GitHub</a>
-                <a href="https://open.spotify.com/user/ct51kdvb5hcqjxg2obbh19iez" target="_blank">Spotify</a>
+                <a href="https://www.facebook.com/TapTDit/" target="_blank" data-i18n="facebook">Facebook</a>
+                <a href="https://www.instagram.com/tapdontknowname/" target="_blank" data-i18n="instagram">Instagram</a>
+                <a href="https://github.com/Mister-Tappy" target="_blank" data-i18n="github">GitHub</a>
+                <a href="https://open.spotify.com/user/ct51kdvb5hcqjxg2obbh19iez" target="_blank" data-i18n="spotify">Spotify</a>
             </div>
         </div>
-        <p>&copy; 2026 Tap Thobpradit. All rights reserved.</p>
+        <p data-i18n="copyright">© 2026 ทัพพ์ ทบประดิษฐ์. สงวนลิขสิทธิ์.</p>
     </footer>
 
     <script src="script.js"></script>

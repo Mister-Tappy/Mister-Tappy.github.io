@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="burger-menu" aria-label="Menu">☰</button>
+            <ul>
+                <li><a href="index.html#hero" data-i18n="home">หน้าแรก</a></li>
+                <li><a href="index.html#experience" data-i18n="experience">ประสบการณ์ & กิจกรรม</a></li>
+                <li><a href="index.html#skills" data-i18n="skills">ทักษะ</a></li>
+                <li><a href="index.html#blog" data-i18n="blog">บล็อก</a></li>
+                <li><a href="index.html#education" data-i18n="education">การศึกษา</a></li>
+                <li><a href="index.html#contact" data-i18n="contact">ติดต่อ</a></li>
+                <li class="translate-toggle">
+                    <button id="translate-toggle" type="button" aria-label="สลับภาษา">TH</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="activities" class="reveal">
+            <h2 data-i18n="activitiesPageTitle">กิจกรรมพิเศษ</h2>
+            <p data-i18n="activitiesIntro">นี่คือกิจกรรมและโปรเจคสำคัญที่ฉันเคยทำ</p>
+            <div class="activities-photos">
+                <article class="activity-photo-card">
+                    <img src="placeholder-image.jpg" alt="Activity Photo 1" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto1Title">กิจกรรมภาพถ่าย 1</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="placeholder-image.jpg" alt="Activity Photo 2" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto2Title">กิจกรรมภาพถ่าย 2</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="placeholder-image.jpg" alt="Activity Photo 3" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto3Title">กิจกรรมภาพถ่าย 3</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="placeholder-image.jpg" alt="Activity Photo 4" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto4Title">กิจกรรมภาพถ่าย 4</h3>
+                </article>
+            </div>
+            <div class="activity-summary">
+                <p data-i18n="activitySummaryText">นี่คือรายละเอียดกิจกรรมที่ยาวขึ้น ซึ่งอธิบายเพิ่มเติมเกี่ยวกับงานที่ฉันทำในแต่ละโปรเจค พร้อมจุดเด่น ความรับผิดชอบ และสิ่งที่เรียนรู้จากการเข้าร่วมกิจกรรมนั้น ๆ</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <a href="index.html" class="back-home" data-i18n="backHome">กลับสู่หน้าแรก</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
