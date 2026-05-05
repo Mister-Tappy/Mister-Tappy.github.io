@@ -25,17 +25,48 @@ document.addEventListener('DOMContentLoaded', function() {
             experienceActivity: 'ชื่อโปรเจค',
             experienceDescriptionLabel: 'รายละเอียด:',
             experienceDescription: 'คำอธิบายสั้น ๆ ของกิจกรรมหรือโปรเจค',
+            experience1Year: '2568',
+            experience1Activity: 'INNOVATION IDEA 2025',
+            experience1Description: 'การแข่งขัน INNOVATION IDEA 2025 ภายใต้แนวคิด PLANET GUARD AI เพื่อหาแนวคิดและนวัตกรรมในการแก้ปัญหาด้านสิ่งแวดล้อม',
             experienceLinkNote: 'คลิกเพื่อดูรายละเอียดกิจกรรมเพิ่มเติม',
+            experience2Year: '2568',
+            experience2Activity: 'EnviTech Camp 2025',
+            experience2Description: 'MICROPLASTIC EXPLORERS อบรมไมโครพลาสติกกับการปนเปื้อนในสิ่งแวดล้อม',
+            experience3Year: '2569',
+            experience3Activity: 'EnviTech Camp 2025',
+            experience3Description: 'Carbon Coin อบรมโลกร้อนและเปลี่ยนแปลงสภาพภูมิอากาศ',
+            experience4Year: '2569',
+            experience4Activity: 'Dek70Camp',
+            experience4Description: 'อบรมเรื่อง GameDesign และการทำงานเป็นทีม',
+            experience5Year: '2569',
+            experience5Activity: 'GameJamX',
+            experience5Description: 'การแข่งขันทำเกมภายใน 3 วัน',
+            experience6Year: '2569',
+            experience6Activity: 'Thailand Robot & Coding Challenge 2026',
+            experience6Description: 'โครงการแข่งขันทักษะเชิงวิศวกรรม Website Competition',
+            experience7Year: '2569',
+            experience7Activity: 'ลองทำงานเป็น Software Engineer',
+            experience7Description: 'การจำลองและเรียนรู้การเป็น Software Engineer',
             activitiesPageTitle: 'กิจกรรมพิเศษ',
-            activitiesIntro: 'นี่คือกิจกรรมและโปรเจคสำคัญที่ฉันเคยทำ',
+            activitiesIntro: 'นี่คือกิจกรรมและโปรเจคสำคัญที่ผมเคยทำ',
             activity1Title: 'งานนิทรรศการวิทยาศาสตร์ 2022',
             activity1Description: 'ออกแบบรถพลังงานแสงอาทิตย์และนำเสนอผลงานในงานโรงเรียน',
             activity2Title: 'ชมรมดนตรี',
             activity2Description: 'เล่นกีตาร์และคีย์บอร์ดในการแสดงของชมรมโรงเรียน',
-            activityPhoto1Title: 'กิจกรรมภาพถ่าย 1',
-            activityPhoto2Title: 'กิจกรรมภาพถ่าย 2',
-            activityPhoto3Title: 'กิจกรรมภาพถ่าย 3',
-            activityPhoto4Title: 'กิจกรรมภาพถ่าย 4',
+            activityPhoto1Title: 'ภาพถ่ายกิจกรรม 1',
+            activityPhoto2Title: 'ภาพถ่ายกิจกรรม 2',
+            activityPhoto3Title: 'ภาพถ่ายกิจกรรม 3',
+            activityPhoto4Title: 'ภาพถ่ายกิจกรรม 4',
+            activityPhoto3PopupLinkText: 'ดูรายละเอียดเพิ่มเติม',
+            activitiesExtraText: 'ด้านล่างนี้เป็นตัวอย่างภาพและวิดีโอจากกิจกรรม พร้อมคำอธิบายเพิ่มเติมสำหรับแต่ละโครงการ',
+
+            activitySummaryText1: 'เป็นงานคิดนวัตกรรมที่ช่วยเรื่องฝุ่น PM2.5 ซึ่งทางกลุ่มของเราได้เสนอแนวกสนใช้เทคโนโลยีโดรนปล่อยเมฆเทียม ซึ่งสามารถดูดซับมลพิษในอากาศได้ ผลงานของเราได้ราลวัลรองชนะเลิศอันดับที่ 1 ซึ่งที่ผมได้จากการมาแข่งขันรายการนี้ทำให้ผลได้เสนอไอเดีย ความคิดสร้างสรรค์ ทักษะการแก้ไขปัญหาและการได้ทำงานเป็นทีม',
+            activitySummaryText2: 'ได้รับการอบรมเกี่ยวกับขยะไมโครพลาสติกที่อยู่รอบๆตัวเรา การป้องกันและแก้ไขพร้อมทั้งผลกระทบที่เกิดขึ้น ผมได้เรียนรู้เกี่ยวกับขยะไมโครพลาสติกและเห็นถึงปัญหา การเสนอไอเดียในการแก้ไขปัญหาต่างๆ',
+            activitySummaryText3: 'ได้รับการอบรมเกี่ยวกับปัญหาโลกร้อน การป้องกันและแก้ไขพร้อมทั้งผลกระทบที่เกิดขึ้น ผมได้เรียนรู้เกี่ยวกับการเกิดขึ้นและผลที่ตามมา การเสนอไอเดียในการแก้ไขปัญหาต่างๆ ซึ่งที่ผมได้จากกิจกรรมนี้คือการเรียนรู้เรื่องผลกระทบที่เกิดจากการกระทำของมนุษย์ แนวคิดและการแก้ไขปัญหา',
+            activitySummaryText4: 'เป็นกิจกรรมที่เรียนรู้เกี่ยวกับการทำเกม สอนคิด สอนสร้าง และการทำงานเป็นทีมร่วมกันกับผู้อื่นที่ไม่ได้รู้จักกันมาก่อน ได้แนวทางการเรียนต่อ ซึ่งที่ผมได้รับจากกิจกรรมนี้คือการทำงานเป็นทีม การคิดไอเดียที่เป็นระบบ และแนวทางการเรียนต่อ',
+            activitySummaryText5: 'งานแข่ง GameJamX ของทาง HamsterHub เป็นงานแข่งทำเกมภายใน 3 วันโดยทางทีมเราได้รับโจทย์เป็น ร้อน ทีมของเราจึงคิดเรื่องของภาวะโลกร้อนและความหัวร้อน ไอเดียเหล่าจึงรวมเป็นเกม Penguin Five Days เป็นเกมเนื้อเรื่อง หลบหลีก โดยผมทำแมพ ระบบ UI และ AI ของนก แม้จะไม่ได้รางวัล แต่ผมได้รับประสบการณ์การวางแผน การทำงานเป็นทีม การสื่อสาร และการแก้ไขปัญหา',
+            activitySummaryText6: 'งานแข่ง Website Competition ของทาง Codekit เป็นงานแข่งทำเว็บไซต์ โดยการแข่งจะให้โจทย์เว็บไซต์มาให้เขียนเว็บตามภายในเวลาที่กำหนด โดยผมทำคนเดียว ทำให้ได้รับประสบการณ์จากการแก้ไขความผิดพลาดและพัฒนาฝีมือเพื่อใช้งานในอนาคต',
+            activitySummaryText7: 'งานนี้เป็นการได้รู้จักกับอาชีพ Software Engineer กับผู้มีประสบการณ์จริง ได้เรียนรู้พื้นฐานการทำเว็บไซต์และเทคนิคต่างๆ เช่น HTML CSS JavaScript GitHub และ AI พร้อมลงมือทำจริง ซึ่งทำให้ผมได้พัฒนาความรู้และเทคนิคเพื่อใช้ต่อไป',
             activitySummaryText: 'นี่คือรายละเอียดกิจกรรมที่ยาวขึ้น ซึ่งอธิบายเพิ่มเติมเกี่ยวกับงานที่ฉันทำในแต่ละโปรเจค พร้อมจุดเด่น ความรับผิดชอบ และสิ่งที่เรียนรู้จากการเข้าร่วมกิจกรรมนั้น ๆ',
             backHome: 'กลับสู่หน้าแรก',
             skillsTitle: 'ความสามารถ และ ภาษา',
@@ -95,7 +126,28 @@ document.addEventListener('DOMContentLoaded', function() {
             experienceActivity: 'Project Name',
             experienceDescriptionLabel: 'Description:',
             experienceDescription: 'A short description of the activity or project.',
+            experience1Year: '2025',
+            experience1Activity: 'INNOVATION IDEA 2025',
+            experience1Description: 'A competition for INNOVATION IDEA 2025 under the concept of PLANET GUARD AI to find innovative ideas and solutions for environmental problems.',
             experienceLinkNote: 'Click to view more activity details',
+            experience2Year: '2025',
+            experience2Activity: 'EnviTech Camp 2025',
+            experience2Description: 'MICROPLASTIC EXPLORERS training on microplastic pollution and environmental contamination.',
+            experience3Year: '2026',
+            experience3Activity: 'EnviTech Camp 2025',
+            experience3Description: 'Carbon Coin training on global warming and climate change.',
+            experience4Year: '2026',
+            experience4Activity: 'Dek70Camp',
+            experience4Description: 'Training on Game Design and teamwork.',
+            experience5Year: '2026',
+            experience5Activity: 'GameJamX',
+            experience5Description: 'A 3-day game development competition.',
+            experience6Year: '2026',
+            experience6Activity: 'Thailand Robot & Coding Challenge 2026',
+            experience6Description: 'An engineering challenge for a website competition.',
+            experience7Year: '2026',
+            experience7Activity: 'Software Engineer Workshop',
+            experience7Description: 'A simulation and learning experience for becoming a Software Engineer.',
             activitiesPageTitle: 'Special Activities',
             activitiesIntro: 'These are my major activities and projects.',
             activity1Title: 'Science Fair 2022',
@@ -106,6 +158,16 @@ document.addEventListener('DOMContentLoaded', function() {
             activityPhoto2Title: 'Activity Photo 2',
             activityPhoto3Title: 'Activity Photo 3',
             activityPhoto4Title: 'Activity Photo 4',
+            activityPhoto3PopupLinkText: 'See more details',
+            activitiesExtraText: 'Below are sample photos and videos from the activities, along with extra details about each project.',
+
+            activitySummaryText1: 'This innovation project addressed PM2.5 pollution. Our team proposed using drones to release artificial clouds to absorb airborne pollutants. We won second place, and I gained experience generating ideas, creative thinking, problem solving, and teamwork.',
+            activitySummaryText2: 'I attended training on microplastic pollution around us, how to prevent and solve it, and its impacts. I learned about microplastics and how to propose solutions to reduce contamination.',
+            activitySummaryText3: 'I learned about global warming, prevention, and consequences. I gained insight into how environmental damage happens and how to propose ideas for solving these problems.',
+            activitySummaryText4: 'This event taught game creation, structured thinking, and teamwork with new people. I gained direction for further study and learned how to work in a team and develop game ideas.',
+            activitySummaryText5: 'The HamsterHub GameJamX competition challenged us to create a game in three days with the theme of heat. We developed Penguin Five Days, a survival game where the player collects fish, avoids flying enemies, and survives until help arrives. I worked on maps, UI, and bird AI, and I learned planning, teamwork, communication, and problem solving.',
+            activitySummaryText6: 'The Codekit Website Competition required building a website from a given brief within a time limit. I worked alone, which taught me how to correct mistakes and improve my skills for future projects.',
+            activitySummaryText7: 'This workshop introduced the Software Engineer career with real professionals and taught website basics and techniques using HTML, CSS, JavaScript, GitHub, and AI. I gained hands-on experience and knowledge to continue developing my skills.',
             activitySummaryText: 'This is a longer activity summary text that explains what I did in each project in more detail, including highlights, responsibilities, and what I learned from participating.',
             backHome: 'Back to home',
             skillsTitle: 'Skills & Languages',
@@ -195,6 +257,83 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('preferredLanguage', lang);
     }
 
+    function createLightbox(type, src, altText, popupLink, popupLinkText) {
+        const existingOverlay = document.querySelector('.lightbox-overlay');
+        if (existingOverlay) {
+            existingOverlay.remove();
+        }
+
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.tabIndex = -1;
+
+        const content = document.createElement('div');
+        content.className = 'lightbox-content';
+
+        const closeButton = document.createElement('button');
+        closeButton.type = 'button';
+        closeButton.className = 'lightbox-close';
+        closeButton.innerHTML = '&times;';
+        closeButton.addEventListener('click', () => overlay.remove());
+
+        let media;
+        if (type === 'video') {
+            media = document.createElement('video');
+            media.src = src;
+            media.controls = true;
+            media.autoplay = true;
+            media.playsInline = true;
+            media.muted = false;
+            media.className = 'lightbox-media';
+        } else {
+            media = document.createElement('img');
+            media.src = src;
+            media.alt = altText || '';
+            media.className = 'lightbox-media';
+        }
+
+        content.appendChild(closeButton);
+        content.appendChild(media);
+
+        if (popupLink) {
+            const linkButton = document.createElement('a');
+            linkButton.href = popupLink;
+            linkButton.target = '_blank';
+            linkButton.rel = 'noopener noreferrer';
+            linkButton.className = 'lightbox-link-button';
+            linkButton.textContent = popupLinkText || 'Learn more';
+            content.appendChild(linkButton);
+        }
+
+        overlay.appendChild(content);
+
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.remove();
+            }
+        });
+
+        document.body.appendChild(overlay);
+    }
+
+    function initMediaLightbox() {
+        const mediaItems = document.querySelectorAll('.activity-photo-card img, .activity-photo-card video');
+        mediaItems.forEach(item => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => {
+                const isVideo = item.tagName.toLowerCase() === 'video';
+                const src = item.getAttribute('src') || item.currentSrc;
+                const altText = item.getAttribute('alt') || '';
+                const popupLink = item.dataset.popupLink || '';
+                const popupLinkTextKey = item.dataset.popupLinkTextKey || '';
+                const popupLinkText = popupLinkTextKey && translations[document.documentElement.lang] ? translations[document.documentElement.lang][popupLinkTextKey] : '';
+                if (src) {
+                    createLightbox(isVideo ? 'video' : 'image', src, altText, popupLink, popupLinkText);
+                }
+            });
+        });
+    }
+
     function getPreferredLanguage() {
         return localStorage.getItem('preferredLanguage') || 'th';
     }
@@ -207,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     translatePage(getPreferredLanguage());
+    initMediaLightbox();
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {

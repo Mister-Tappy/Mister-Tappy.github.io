@@ -636,6 +636,80 @@ p {
     line-height: 1.8;
 }
 
+.activity-photo-img {
+    cursor: pointer;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    padding: 1.5rem;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: min(950px, 100%);
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox-content img,
+.lightbox-content video {
+    display: block;
+    width: 100%;
+    max-height: 95vh;
+    object-fit: contain;
+}
+
+.lightbox-link-button {
+    display: inline-block;
+    margin: 0.75rem 1rem 1rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-link-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
 .experience-img {
     width: 260px;
     height: 180px;
