@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
             activityPhoto2Title: 'ภาพถ่ายกิจกรรม 2',
             activityPhoto3Title: 'ภาพถ่ายกิจกรรม 3',
             activityPhoto4Title: 'ภาพถ่ายกิจกรรม 4',
+            activityVideoTitle: 'วิดีโอกิจกรรม',
+            activityLinkTitle: 'ลิงค์ผลงาน',
             activityPhoto3PopupLinkText: 'ดูรายละเอียดเพิ่มเติม',
             activitiesExtraText: 'ด้านล่างนี้เป็นตัวอย่างภาพและวิดีโอจากกิจกรรม พร้อมคำอธิบายเพิ่มเติมสำหรับแต่ละโครงการ',
 
@@ -158,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
             activityPhoto2Title: 'Activity Photo 2',
             activityPhoto3Title: 'Activity Photo 3',
             activityPhoto4Title: 'Activity Photo 4',
+            activityVideoTitle: 'Activity Video',
+            activityLinkTitle: 'Activity Work Link',
             activityPhoto3PopupLinkText: 'See more details',
             activitiesExtraText: 'Below are sample photos and videos from the activities, along with extra details about each project.',
 
