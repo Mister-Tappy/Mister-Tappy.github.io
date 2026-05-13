@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="img/star.png">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: rgba(255,255,255,0.07);
+    --math: #f9c846;
+    --physics: #4fc3f7;
+    --chem: #a8e6cf;
+    --tpat: #ff8a80;
+    --tgat: #ce93d8;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --accent: #f9c846;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Sarabun', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(249,200,70,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249,200,70,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .header-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #fff 0%, var(--accent) 60%, #ff8a50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+  }
+
+  .header-sub {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* Section title */
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Proportion section */
+  .proportion-section {
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .proportion-bar-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+
+  .big-bar {
+    display: flex;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    gap: 2px;
+    margin-bottom: 24px;
+  }
+
+  .bar-seg {
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    position: relative;
+    cursor: default;
+  }
+
+  .bar-seg:hover { filter: brightness(1.2); transform: scaleY(1.08); }
+
+  .bar-math   { background: var(--math);    width: 35%; }
+  .bar-phys   { background: var(--physics); width: 30%; }
+  .bar-chem   { background: var(--chem);    width: 20%; }
+  .bar-tpat   { background: var(--tpat);    width: 10%; }
+  .bar-tgat   { background: var(--tgat);    width: 5%; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-name { font-weight: 600; }
+  .legend-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Subject cards */
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .subject-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .subject-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .subject-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .subject-card.math::before  { background: var(--math); }
+  .subject-card.phys::before  { background: var(--physics); }
+  .subject-card.chem::before  { background: var(--chem); }
+  .subject-card.tpat::before  { background: var(--tpat); }
+  .subject-card.tgat::before  { background: var(--tgat); }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .card-name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .card-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .card-pct.math  { color: var(--math); }
+  .card-pct.phys  { color: var(--physics); }
+  .card-pct.chem  { color: var(--chem); }
+  .card-pct.tpat  { color: var(--tpat); }
+  .card-pct.tgat  { color: var(--tgat); }
+
+  .card-hours {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-hours::before {
+    content: '⏱';
+    font-size: 11px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .tag.highlight {
+    background: rgba(249,200,70,0.1);
+    border-color: rgba(249,200,70,0.3);
+    color: var(--math);
+  }
+
+  /* Schedule */
+  .schedule-section {
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .week-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .week-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .day-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .day-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .day-card:nth-child(1) { animation-delay: 0.5s; }
+  .day-card:nth-child(2) { animation-delay: 0.55s; }
+  .day-card:nth-child(3) { animation-delay: 0.6s; }
+  .day-card:nth-child(4) { animation-delay: 0.65s; }
+  .day-card:nth-child(5) { animation-delay: 0.7s; }
+  .day-card:nth-child(6) { animation-delay: 0.75s; }
+  .day-card:nth-child(7) { animation-delay: 0.8s; }
+
+  .day-card.heavy {
+    background: var(--surface2);
+    border-color: rgba(249,200,70,0.2);
+  }
+
+  .day-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+
+  .day-theme {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .day-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .day-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .day-hours {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .day-note {
+    font-size: 10px;
+    color: var(--tpat);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* Total hours summary */
+  .summary-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    animation: fadeUp 0.8s 0.9s ease both;
+  }
+
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .summary-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .summary-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .summary-val small {
+    font-size: 18px;
+    color: var(--muted);
+  }
+
+  .summary-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--border);
+  }
+
+  /* Key reminders */
+  .reminders {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    animation: fadeUp 0.8s 1s ease both;
+  }
+
+  .reminder {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: border-color 0.3s;
+  }
+
+  .reminder:hover { border-color: rgba(255,255,255,0.12); }
+
+  .reminder-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  .reminder-text {
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .reminder-text strong {
+    display: block;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-tag">แผนการเรียน ช่วง</div>
+    <h1>พ.ค.–ก.พ.</h1>
+    <p class="header-sub">สัดส่วนเวลา · ตารางรายสัปดาห์ · เป้าหมายรายวิชา</p>
+  </div>
+
+  <!-- Proportion -->
+  <div class="proportion-section reveal">
+    <div class="section-title">สัดส่วนเวลาเรียน</div>
+    <div class="proportion-bar-wrap">
+      <div class="big-bar">
+        <div class="bar-seg bar-math" title="คณิต 35%"></div>
+        <div class="bar-seg bar-phys" title="ฟิสิกส์ 30%"></div>
+        <div class="bar-seg bar-chem" title="เคมี 20%"></div>
+        <div class="bar-seg bar-tpat" title="TPAT3 10%"></div>
+        <div class="bar-seg bar-tgat" title="TGAT 5%"></div>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--math)"></div><span class="legend-name">คณิตศาสตร์</span><span class="legend-pct">35%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--physics)"></div><span class="legend-name">ฟิสิกส์</span><span class="legend-pct">30%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--chem)"></div><span class="legend-name">เคมี</span><span class="legend-pct">20%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--tpat)"></div><span class="legend-name">TPAT3</span><span class="legend-pct">10%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--tgat)"></div><span class="legend-name">TGAT</span><span class="legend-pct">5%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subject cards -->
+  <div class="subjects-grid reveal">
+
+    <div class="subject-card math">
+      <div class="card-header">
+        <div>
+          <div class="card-name">A-Level คณิตศาสตร์</div>
+          <div class="card-hours">12–15 ชั่วโมง / สัปดาห์</div>
+        </div>
+        <div class="card-pct math">35%</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">เรียนเนื้อหา</span>
+        <span class="tag">ทำโจทย์</span>
+        <span class="tag">ทวนสูตร</span>
+        <span class="tag highlight">จับเวลา</span>
+      </div>
+    </div>
+
+    <div class="subject-card phys">
+      <div class="card-header">
+        <div>
+          <div class="card-name">ฟิสิกส์</div>
+          <div class="card-hours">10–12 ชั่วโมง / สัปดาห์</div>
+        </div>
+        <div class="card-pct phys">30%</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag highlight" style="background:rgba(79,195,247,0.1);border-color:rgba(79,195,247,0.3);color:var(--physics)">⚠ คิดเองก่อนดูเฉลย</span>
+      </div>
+    </div>
+
+    <div class="subject-card chem">
+      <div class="card-header">
+        <div>
+          <div class="card-name">เคมี</div>
+          <div class="card-hours">6–8 ชั่วโมง / สัปดาห์</div>
+        </div>
+        <div class="card-pct chem">20%</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">เข้าใจ concept</span>
+        <span class="tag">คำนวณ</span>
+      </div>
+    </div>
+
+    <div class="subject-card tpat">
+      <div class="card-header">
+        <div>
+          <div class="card-name">TPAT3</div>
+          <div class="card-hours">3–5 ชั่วโมง / สัปดาห์</div>
+        </div>
+        <div class="card-pct tpat">10%</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">ช่วงแรกไม่ต้องหนักมาก</span>
+        <span class="tag">Spatial</span>
+      </div>
+    </div>
+
+    <div class="subject-card tgat">
+      <div class="card-header">
+        <div>
+          <div class="card-name">TGAT</div>
+          <div class="card-hours">2–3 ชั่วโมง / สัปดาห์</div>
+        </div>
+        <div class="card-pct tgat">5%</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag">ทำสม่ำเสมอพอ</span>
+        <span class="tag">อังกฤษ</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Schedule -->
+  <div class="schedule-section reveal">
+    <div class="section-title">ตารางรายสัปดาห์</div>
+
+    <div class="week-grid">
+
+      <!-- จันทร์ -->
+      <div class="day-card">
+        <div class="day-name">จันทร์</div>
+        <div class="day-theme">คณิต + ฟิสิกส์</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>คณิต 2 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--physics)"></div><span>ฟิสิกส์ 2 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--tgat)"></div><span>TGAT อังกฤษ 30 นาที</span></div>
+        <div class="day-hours">⏱ ~4.5 ชม.</div>
+      </div>
+
+      <!-- อังคาร -->
+      <div class="day-card">
+        <div class="day-name">อังคาร</div>
+        <div class="day-theme">คณิต + เคมี</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>คณิต 2 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--chem)"></div><span>เคมี 2 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--muted)"></div><span>ทวนสูตร 30 นาที</span></div>
+        <div class="day-hours">⏱ ~4.5 ชม.</div>
+      </div>
+
+      <!-- พุธ -->
+      <div class="day-card">
+        <div class="day-name">พุธ</div>
+        <div class="day-theme">วันโจทย์</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--physics)"></div><span>ฟิสิกส์โจทย์ 2–3 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>คณิตโจทย์ 2 ชม.</span></div>
+        <div class="day-hours">⏱ ~4–5 ชม.</div>
+        <div class="day-note">★ เน้นคิดเอง ห้ามดูเฉลย</div>
+      </div>
+
+      <!-- พฤหัส -->
+      <div class="day-card">
+        <div class="day-name">พฤหัส</div>
+        <div class="day-theme">เคมี + TGAT</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--chem)"></div><span>เคมี 2 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--tgat)"></div><span>TGAT 1–1.5 ชม.</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--muted)"></div><span>ทวน Error Log</span></div>
+        <div class="day-hours">⏱ ~3.5 ชม.</div>
+      </div>
+
+      <!-- ศุกร์ -->
+      <div class="day-card">
+        <div class="day-name">ศุกร์</div>
+        <div class="day-theme">วันเบา</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--muted)"></div><span>ทวนสรุป</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>โจทย์เบา ๆ</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--tpat)"></div><span>Spatial TPAT3</span></div>
+        <div class="day-hours">⏱ 3–4 ชม.</div>
+      </div>
+
+      <!-- เสาร์ -->
+      <div class="day-card heavy">
+        <div class="day-name">เสาร์</div>
+        <div class="day-theme">⚡ วันอัดหนัก</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>คณิต 3 ชม. (เช้า)</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--physics)"></div><span>ฟิสิกส์ 3 ชม. (บ่าย)</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--tpat)"></div><span>TPAT3 / TGAT (เย็น)</span></div>
+        <div class="day-hours">⏱ 8–10 ชม.</div>
+      </div>
+
+      <!-- อาทิตย์ -->
+      <div class="day-card heavy">
+        <div class="day-name">อาทิตย์</div>
+        <div class="day-theme">🎯 สอบจำลอง</div>
+        <div class="day-item"><div class="day-dot" style="background:var(--math)"></div><span>คณิตชุดใหญ่ (เช้า)</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--physics)"></div><span>ฟิสิกส์ + เคมี (บ่าย)</span></div>
+        <div class="day-item"><div class="day-dot" style="background:var(--tpat)"></div><span>วิเคราะห์ข้อผิดพลาด (เย็น)</span></div>
+        <div class="day-hours">⏱ Mixed Set · จับเวลา</div>
+      </div>
+
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-bar reveal">
+      <div class="summary-item">
+        <div class="summary-label">เวลาต่อสัปดาห์</div>
+        <div class="summary-val">33–43<small> ชม.</small></div>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-item">
+        <div class="summary-label">วันหนักสุด</div>
+        <div class="summary-val">เสาร์</div>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-item">
+        <div class="summary-label">วิชาหลัก</div>
+        <div class="summary-val" style="color:var(--math)">คณิต</div>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-item">
+        <div class="summary-label">ระยะเวลา</div>
+        <div class="summary-val">10<small> เดือน</small></div>
+      </div>
+    </div>
+
+    <!-- Reminders -->
+    <div class="reminders reveal">
+      <div class="reminder">
+        <div class="reminder-icon">🚫</div>
+        <div class="reminder-text"><strong>ฟิสิกส์</strong>อย่าดูเฉลยก่อนคิดเองทุกครั้ง</div>
+      </div>
+      <div class="reminder">
+        <div class="reminder-icon">⏱</div>
+        <div class="reminder-text"><strong>คณิต</strong>ฝึกจับเวลาให้ชิน เตรียมรับแรงกดดัน</div>
+      </div>
+      <div class="reminder">
+        <div class="reminder-icon">📝</div>
+        <div class="reminder-text"><strong>Error Log</strong>บันทึกข้อผิดพลาดทุกวัน ทวนทุกพฤหัส</div>
+      </div>
+      <div class="reminder">
+        <div class="reminder-icon">🧪</div>
+        <div class="reminder-text"><strong>เคมี</strong>เข้าใจ concept ก่อนท่อง เน้นคำนวณ</div>
+      </div>
+      <div class="reminder">
+        <div class="reminder-icon">📅</div>
+        <div class="reminder-text"><strong>TPAT3</strong>ช่วงแรกยังไม่ต้องหนัก เพิ่มทีหลัง</div>
+      </div>
+      <div class="reminder">
+        <div class="reminder-icon">🎯</div>
+        <div class="reminder-text"><strong>อาทิตย์</strong>ทำข้อสอบเก่า + วิเคราะห์ผลทุกสัปดาห์</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Animate bar on load
+  window.addEventListener('load', () => {
+    const segs = document.querySelectorAll('.bar-seg');
+    segs.forEach((seg, i) => {
+      seg.style.opacity = '0';
+      seg.style.transform = 'scaleX(0)';
+      seg.style.transformOrigin = 'left';
+      seg.style.transition = `opacity 0.5s ${i * 0.1}s ease, transform 0.6s ${i * 0.1}s cubic-bezier(0.34,1.56,0.64,1)`;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          seg.style.opacity = '1';
+          seg.style.transform = 'scaleX(1)';
+        });
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
