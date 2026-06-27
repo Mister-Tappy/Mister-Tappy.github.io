@@ -1,7 +1,7 @@
 # Mister-Tappy.github.io
 # Hi there, I'm Tap 👋
 
-### 👨‍💻 Full Stack Developer | Game Developer | Student
+### 👨‍💻 Student
 
 I am a passionate developer who loves building immersive digital experiences, whether it's through scalable web applications or atmospheric games. I enjoy solving complex problems and constantly learning new frameworks to improve my craft.
 
@@ -11,12 +11,13 @@ I am a passionate developer who loves building immersive digital experiences, wh
 
 **Web Development**
 - **Frontend:** Astro, Bootstrap, CSS3, HTML5
+- **Backend:** Js, Insomania, API, Server
 - **Deployment:** GitHub Pages, Vercel
 
 **Game Development**
 - **Engine:** Unity (Universal Render Pipeline - URP)
 - **Scripting:** C#
-- **Specialties:** AI Pathfinding (NavMesh), Environmental Design, Horror Mechanics
+- **Specialties:** AI Pathfinding (NavMesh), Environmental Design, Horror Mechanics, MapBuild
 
 ---
 
