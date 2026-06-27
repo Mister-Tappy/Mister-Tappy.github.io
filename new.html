@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Detection Panel</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:Inter,Segoe UI,sans-serif;
+    background:#0f1117;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.panel{
+    width:900px;
+    max-width:95%;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:28px;
+    padding:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.title{
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.controls button{
+    border:none;
+    padding:12px 24px;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:600;
+    margin-left:10px;
+}
+
+.start{background:white;}
+.stop{background:#222;color:white;}
+
+#webcam-container{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+canvas{
+    border-radius:18px;
+}
+
+#label-container{
+    display:grid;
+    gap:10px;
+}
+
+.prediction{
+    background:rgba(255,255,255,.05);
+    padding:12px;
+    border-radius:12px;
+}
+
+.resultCard{
+    display:none;
+    margin-top:25px;
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+}
+
+.resultCard img{
+    max-width:250px;
+    border-radius:16px;
+    margin-bottom:15px;
+}
+
+.time{
+    opacity:.8;
+}
+</style>
+</head>
+<body>
+
+<div class="panel">
+    <div class="header">
+        <div class="title">AI Recognition</div>
+        <div class="controls">
+            <button class="start" onclick="init()">Start</button>
+            <button class="stop" onclick="stopCamera()">Stop</button>
+        </div>
+    </div>
+
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+
+    <div id="resultCard" class="resultCard">
+        <img id="resultImage" src="" alt="result">
+        <h2 id="resultTitle"></h2>
+        <div id="dateTime" class="time"></div>
+    </div>
+</div>
+
+<script>
+const URL = "https://teachablemachine.withgoogle.com/models/yVTsi55d3/";
+
+let model, webcam, labelContainer, maxPredictions;
+let running = false;
+
+const resultImages = {
+    "Class 1":"https://placehold.co/400x250",
+    "Class 2":"https://placehold.co/400x250"
+};
+
+async function init(){
+    if(running) return;
+
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
+
+    webcam = new tmImage.Webcam(320,320,true);
+    await webcam.setup();
+    await webcam.play();
+
+    running = true;
+
+    document.getElementById("webcam-container").innerHTML="";
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+    labelContainer = document.getElementById("label-container");
+    labelContainer.innerHTML="";
+
+    for(let i=0;i<maxPredictions;i++){
+        const div=document.createElement("div");
+        div.className="prediction";
+        labelContainer.appendChild(div);
+    }
+
+    window.requestAnimationFrame(loop);
+}
+
+function stopCamera(){
+    running=false;
+    if(webcam) webcam.stop();
+}
+
+async function loop(){
+    if(!running) return;
+
+    webcam.update();
+    await predict();
+
+    requestAnimationFrame(loop);
+}
+
+async function predict(){
+    const prediction = await model.predict(webcam.canvas);
+
+    let best = prediction.reduce((a,b)=>a.probability>b.probability?a:b);
+
+    prediction.forEach((p,i)=>{
+        labelContainer.childNodes[i].innerHTML =
+        `${p.className} - ${(p.probability*100).toFixed(1)}%`;
+    });
+
+    if(best.probability >= 0.99){
+        showResult(best.className);
+    }
+}
+
+function showResult(className){
+    const card = document.getElementById("resultCard");
+
+    document.getElementById("resultTitle").textContent = className;
+
+    if(resultImages[className]){
+        document.getElementById("resultImage").src = resultImages[className];
+    }
+
+    document.getElementById("dateTime").textContent =
+        new Date().toLocaleString("th-TH");
+
+    card.style.display = "block";
+}
+</script>
+
+</body>
+</html>

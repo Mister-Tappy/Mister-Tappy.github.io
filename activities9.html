@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Personal Portfolio</title>
+    <link rel="icon" href="img/star.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="burger-menu" aria-label="Menu">☰</button>
+            <ul>
+                <li><a href="index.html#hero" data-i18n="home">หน้าแรก</a></li>
+                <li><a href="index.html#experience" data-i18n="experience">ประสบการณ์ & กิจกรรม</a></li>
+                <li><a href="index.html#skills" data-i18n="skills">ทักษะ</a></li>
+                <li><a href="index.html#blog" data-i18n="blog">บล็อก</a></li>
+                <li><a href="index.html#education" data-i18n="education">การศึกษา</a></li>
+                <li><a href="index.html#contact" data-i18n="contact">ติดต่อ</a></li>
+                <li class="translate-toggle">
+                    <button id="translate-toggle" type="button" aria-label="สลับภาษา">TH</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="activities" class="reveal">
+            <h2 data-i18n="activitiesPageTitle">กิจกรรมพิเศษ</h2>
+            <p data-i18n="activitiesIntro">นี่คือกิจกรรมและโปรเจคสำคัญที่ฉันเคยทำ</p>
+            <p data-i18n="activitiesExtraText">ด้านล่างนี้เป็นตัวอย่างภาพและวิดีโอจากกิจกรรม พร้อมคำอธิบายเพิ่มเติมสำหรับแต่ละโครงการ</p>
+            <div class="activities-photos">
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/insomania.png" alt="Activity Photo 1" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto1Title">ภาพถ่ายกิจกรรม 1</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/cide.png" alt="Activity Photo 2" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto2Title">ภาพถ่ายกิจกรรม 2</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/1782545139274.jpg" alt="Activity Photo 3" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto3Title">ภาพถ่ายกิจกรรม 3</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/1782545139274.jpg" alt="Activity Photo 4" class="activity-photo-img">
+                    <h3 data-i18n="activityPhoto4Title">ภาพถ่ายกิจกรรม 4</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/intros.png" alt="Activity Photo 3" class="activity-photo-img" data-popup-link="https://github.com/Mister-Tappy/APIintroducing" data-popup-link-text-key="activityPhoto3PopupLinkText">
+                    <h3 data-i18n="activityLinkTitle">ลิงค์ผลงาน</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/Cals.png" alt="Activity Photo 3" class="activity-photo-img" data-popup-link="https://github.com/Mister-Tappy/APICalculator" data-popup-link-text-key="activityPhoto3PopupLinkText">
+                    <h3 data-i18n="activityLinkTitle">ลิงค์ผลงาน</h3>
+                </article>
+                <article class="activity-photo-card">
+                    <img src="img/IntrotoBackend/BMIC.png" alt="Activity Photo 3" class="activity-photo-img" data-popup-link="https://github.com/Mister-Tappy/APIbmi" data-popup-link-text-key="activityPhoto3PopupLinkText">
+                    <h3 data-i18n="activityLinkTitle">ลิงค์ผลงาน</h3>
+                </article>
+            </div>
+            <div class="activity-summary">
+                <p data-i18n="activitySummaryText9"> เป็นค่ายที่สอนเกี่ยวกับการเป็น Backend Developer ซึ่งเป็นทักษะที่สำคัญในการพัฒนาแอปพลิเคชันและเว็บไซต์ การเรียนรู้เหล่านี้จะช่วยให้ฉันสามารถสร้างระบบที่มีประสิทธิภาพและตอบสนองความต้องการของผู้ใช้ได้ดีขึ้นในอนาคต การสร้าง Server และ API เป็นส่วนสำคัญของการพัฒนาแอปพลิเคชันที่สามารถเชื่อมต่อกับฐานข้อมูลและให้บริการข้อมูลแก่ผู้ใช้ได้อย่างมีประสิทธิภาพ
+                    พร้อมกับการเรียนรู้ Node Js cors Express และ Insomania ซึ่งเป็นเครื่องมือที่นิยมใช้ในการพัฒนา Backend ทำให้ผมสามารถสร้างเว็บไซต์ที่มีความสามารถในการจัดการข้อมูลและตอบสนองต่อคำขอของผู้ใช้ได้อย่างรวดเร็วและมีประสิทธิภาพ 
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <a href="index.html" class="back-home" data-i18n="backHome">กลับสู่หน้าแรก</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
