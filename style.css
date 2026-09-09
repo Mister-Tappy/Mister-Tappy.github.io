@@ -941,6 +941,11 @@ footer .social-links a:hover {
         justify-content: center;
     }
 
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
     .translate-toggle button {
         width: 100%;
         max-width: 120px;
@@ -968,9 +973,22 @@ footer .social-links a:hover {
         gap: 1rem;
     }
 
+    .experience-card,
+    .experience-card-link {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
     .experience-img {
         width: 100%;
         height: auto;
+        max-height: 240px;
+    }
+
+    .experience-text {
+        min-width: 0;
+        width: 100%;
     }
 
     section {
