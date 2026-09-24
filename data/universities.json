@@ -1,0 +1,82 @@
+[
+  {
+    "id": "chula",
+    "name": "Chulalongkorn University",
+    "shortName": "CU",
+    "province": "Bangkok",
+    "admissionWebsite": "https://www.chula.ac.th/",
+    "logo": "assets/universities/chula.webp",
+    "description": "One of Thailand's most prestigious universities, renowned for academic excellence, strong research culture, and a wide range of faculties.",
+    "officialColors": ["#D4AF37", "#1A1A1A"]
+  },
+  {
+    "id": "tu",
+    "name": "Thammasat University",
+    "shortName": "TU",
+    "province": "Pathum Thani",
+    "admissionWebsite": "https://www.tu.ac.th/",
+    "logo": "assets/universities/thammasat.svg",
+    "description": "A leading Thai public university known for public policy, law, social sciences, and strong civic engagement.",
+    "officialColors": ["#003B73", "#FFD166"]
+  },
+  {
+    "id": "ku",
+    "name": "Kasetsart University",
+    "shortName": "KU",
+    "province": "Bangkok",
+    "admissionWebsite": "https://www.ku.ac.th/",
+    "logo": "assets/universities/kasetsart.svg",
+    "description": "A major agricultural and science-focused university with strong engineering, business, and social science programs.",
+    "officialColors": ["#2E8B57", "#F4C542"]
+  },
+  {
+    "id": "mahidol",
+    "name": "Mahidol University",
+    "shortName": "MU",
+    "province": "Bangkok",
+    "admissionWebsite": "https://mahidol.ac.th/",
+    "logo": "assets/universities/mahidol.svg",
+    "description": "A top university recognized for medical sciences, health sciences, arts, and multidisciplinary research excellence.",
+    "officialColors": ["#0F4C81", "#7CC7FF"]
+  },
+  {
+    "id": "kmitl",
+    "name": "King Mongkut's Institute of Technology Ladkrabang",
+    "shortName": "KMITL",
+    "province": "Bangkok",
+    "admissionWebsite": "https://www.kmitl.ac.th/",
+    "logo": "assets/universities/kmitl.svg",
+    "description": "A technology-focused institution emphasizing engineering, digital innovation, and applied science.",
+    "officialColors": ["#1E3A8A", "#7DD3FC"]
+  },
+  {
+    "id": "kmutt",
+    "name": "King Mongkut's University of Technology Thonburi",
+    "shortName": "KMUTT",
+    "province": "Bangkok",
+    "admissionWebsite": "https://www.kmutt.ac.th/",
+    "logo": "assets/universities/kmutt.svg",
+    "description": "Known for engineering, technology, design, and innovation with strong industry connections.",
+    "officialColors": ["#1D4ED8", "#A78BFA"]
+  },
+  {
+    "id": "kmutnb",
+    "name": "King Mongkut's University of Technology North Bangkok",
+    "shortName": "KMUTNB",
+    "province": "Bangkok",
+    "admissionWebsite": "https://www.kmutnb.ac.th/",
+    "logo": "assets/universities/kmutnb.svg",
+    "description": "A modern engineering and technology university serving Thailand's industrial and technical workforce needs.",
+    "officialColors": ["#0EA5E9", "#22C55E"]
+  },
+  {
+    "id": "cmu",
+    "name": "Chiang Mai University",
+    "shortName": "CMU",
+    "province": "Chiang Mai",
+    "admissionWebsite": "https://www.cmu.ac.th/",
+    "logo": "assets/universities/cmu.svg",
+    "description": "A leading regional university recognized for research, arts, agriculture, and community development.",
+    "officialColors": ["#B45309", "#F59E0B"]
+  }
+]

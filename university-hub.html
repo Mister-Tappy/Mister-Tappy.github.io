@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="University Hub dashboard for Thai university admissions, scholarships, open house events, and deadlines."
+    />
+    <title>University Hub</title>
+    <link rel="stylesheet" href="university-hub.css" />
+  </head>
+  <body class="hub-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">M</span>
+            <span>Mister Tappy</span>
+          </a>
+
+          <div class="nav-links" aria-label="Page sections">
+            <a href="#university-directory" data-i18n="navDirectory">Directory</a>
+            <a href="#announcements" data-i18n="navAnnouncements">Announcements</a>
+            <a href="#favorites-section" data-i18n="navFavorites">Favorites</a>
+          </div>
+
+          <button id="language-toggle" class="nav-language-toggle" type="button" aria-label="Switch language">
+            TH
+          </button>
+
+          <a class="nav-cta" href="index.html" data-i18n="navBack">Back to portfolio</a>
+        </nav>
+      </header>
+
+      <main class="hub-main">
+        <section class="hero section reveal">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow" data-i18n="eyebrow">University Hub</p>
+              <h1 data-i18n="pageTitle">University Hub</h1>
+              <p class="hero-text" data-i18n="heroText">
+                A centralized dashboard for Thai university admissions, TCAS announcements,
+                scholarships, open house events, and application deadlines.
+              </p>
+
+              <div class="search-panel" aria-label="Search admissions">
+                <label class="sr-only" for="global-search">Search announcements or universities</label>
+                <div class="search-input-wrap">
+                  <span class="search-icon" aria-hidden="true">⌕</span>
+                  <input
+                    id="global-search"
+                    type="search"
+                    placeholder="Search universities, faculties, categories, or keywords..."
+                    aria-label="Search university announcements"
+                    data-i18n-placeholder="searchPlaceholder"
+                  />
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a class="primary-button" href="#university-directory" data-i18n="exploreUniversities">Explore universities</a>
+                <a class="secondary-button" href="#announcements" data-i18n="viewAnnouncements">View announcements</a>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-label="University statistics overview">
+              <div class="orb orb-one" aria-hidden="true"></div>
+              <div class="orb orb-two" aria-hidden="true"></div>
+              <div class="orb orb-three" aria-hidden="true"></div>
+
+              <div class="stats-grid">
+                <article class="stat-card">
+                  <span class="stat-label" data-i18n="statUniversities">Total universities</span>
+                  <strong id="total-universities">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-label" data-i18n="statAnnouncements">Total announcements</span>
+                  <strong id="total-announcements">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-label" data-i18n="statAdmissions">Open admissions</span>
+                  <strong id="open-admissions">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-label" data-i18n="statFavorites">Favorites</span>
+                  <strong id="favorites-count">0</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="filters section reveal" aria-label="Announcement filters">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow" data-i18n="filtersEyebrow">Filters</p>
+              <h2 data-i18n="filtersTitle">Explore by category</h2>
+            </div>
+            <p id="results-summary" class="results-summary" data-i18n="resultsDefault">Showing all announcements</p>
+          </div>
+
+          <div id="filter-chips" class="filter-chips" aria-label="Filter announcement categories"></div>
+        </section>
+
+        <section id="university-directory" class="section reveal" aria-labelledby="directory-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="directoryEyebrow">Directory</p>
+              <h2 id="directory-title" data-i18n="directoryTitle">University directory</h2>
+            </div>
+            <p class="section-note" data-i18n="directoryNote">Modern glass cards for every university</p>
+          </div>
+
+          <div id="universities-grid" class="universities-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="favorites-section" class="section reveal" aria-labelledby="favorites-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="favoritesEyebrow">Saved</p>
+              <h2 id="favorites-title" data-i18n="favoritesTitle">Favorites</h2>
+            </div>
+            <p id="favorites-summary" class="section-note" data-i18n="favoritesSummaryDefault">0 favorites saved</p>
+          </div>
+
+          <div id="favorites-grid" class="favorites-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="announcements" class="section reveal" aria-labelledby="announcements-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="feedEyebrow">Feed</p>
+              <h2 id="announcements-title" data-i18n="feedTitle">Announcement feed</h2>
+            </div>
+            <p class="section-note" data-i18n="feedNote">Newest announcements first</p>
+          </div>
+
+          <div id="announcement-feed" class="announcement-feed" aria-live="polite"></div>
+        </section>
+
+        <section class="section reveal two-column">
+          <div class="countdown-panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="countdownEyebrow">Countdown</p>
+                <h2 data-i18n="countdownTitle">Upcoming deadlines</h2>
+              </div>
+            </div>
+            <div id="countdown-list" class="countdown-list" aria-live="polite"></div>
+          </div>
+
+          <div class="timeline-panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow" data-i18n="calendarEyebrow">Calendar</p>
+                <h2 data-i18n="calendarTitle">Important dates</h2>
+              </div>
+            </div>
+            <div id="calendar-timeline" class="calendar-timeline" aria-live="polite"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="university-modal" class="university-modal" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <button class="modal-close" type="button" aria-label="Close university details">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="js/university.js"></script>
+  </body>
+</html>

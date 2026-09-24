@@ -1,0 +1,141 @@
+[
+  {
+    "id": "ann-1",
+    "universityId": "chula",
+    "title": "TCAS Portfolio Round Open for Applications",
+    "category": "TCAS",
+    "date": "2026-09-10",
+    "deadline": "2026-09-22",
+    "link": "https://www.chula.ac.th/",
+    "keywords": ["portfolio", "TCAS", "admission"],
+    "faculty": "Faculty of Engineering"
+  },
+  {
+    "id": "ann-2",
+    "universityId": "tu",
+    "title": "Thammasat University: วท.บ. วิทยาการคอมพิวเตอร์ Admissions 2569",
+    "category": "TCAS",
+    "date": "2026-09-14",
+    "deadline": "2026-12-16",
+    "link": "https://www.tuadmissions.in.th/img/2026090207375193.pdf",
+    "keywords": ["TCAS", "portfolio", "วิทยาการคอมพิวเตอร์", "thammasat", "science and technology"],
+    "faculty": "Faculty of Science and Technology",
+    "description": "รับสมัครระหว่างวันที่ 14 กันยายน – 16 ธันวาคม 2569 ผ่านระบบออนไลน์ที่ www.tuadmissions.in.th โดยเปิดรับ วท.บ. สาขาวิชาวิทยาการคอมพิวเตอร์ จำนวน 20 คน และ วท.บ. สาขาวิชาวิทยาการคอมพิวเตอร์ (โครงการพิเศษ) จำนวน 20 คน GPAX 3.00",
+    "details": [
+      "เกณฑ์การคัดเลือก (คะแนนรวม 100%)",
+      "1. คะแนนแฟ้มสะสมผลงาน (TCASFolio/Portfolio) ค่าน้ำหนัก 50%",
+      "2. คะแนน TGAT รหัส 90 ความถนัดทั่วไป เฉพาะ TGAT รหัส 91 วิชาการสื่อสารภาษาอังกฤษ ค่าน้ำหนัก 15%",
+      "3. คะแนน TGAT รหัส 90 ความถนัดทั่วไป เฉพาะ TGAT รหัส 92 วิชาการคิดอย่างมีเหตุผล ค่าน้ำหนัก 15%",
+      "4. คะแนน TGAT รหัส 90 ความถนัดทั่วไป เฉพาะ TGAT รหัส 93 วิชาสมรรถนะการทำงาน ค่าน้ำหนัก 5%",
+      "5. คะแนน TPAT รหัส 30 วิชาความถนัดวิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์ ค่าน้ำหนัก 15%",
+      "6. ผ่านการสอบสัมภาษณ์โดยคณะกรรมการ",
+      "รูปแบบ TCASFolio หรือ Portfolio มี 5 หมวด ได้แก่ ข้อมูลพื้นฐาน, Statement of Purpose, เอกสารหลักฐานการศึกษา, ผลงาน, คำถามเพิ่มเติม",
+      "ผู้สมัครต้องส่งเอกสารประกอบการสมัครเป็น PDF รวม 1 ไฟล์ ไม่เกิน 10 หน้า และมีขนาดไม่เกิน 20 MB"
+    ]
+  },
+  {
+    "id": "ann-9",
+    "universityId": "tu",
+    "title": "Thammasat University: วศ.บ. วิศวกรรมคอมพิวเตอร์ Admissions 2569",
+    "category": "Portfolio",
+    "date": "2026-09-14",
+    "deadline": "2026-12-16",
+    "link": "https://admission.engr.tu.ac.th/",
+    "keywords": ["portfolio", "engineering", "computer engineering", "thammasat", "admission"],
+    "faculty": "Faculty of Engineering",
+    "description": "รับสมัคร วศ.บ. สาขาวิศวกรรมคอมพิวเตอร์ จำนวน 20 คน GPAX 3.00 เกณฑ์การคัดเลือก: คะแนนแฟ้มสะสมผลงาน 40%, TPAT3 40%, สอบสัมภาษณ์ 20%",
+    "details": [
+      "รูปแบบ TCASFolio หรือ Portfolio ประกอบด้วย 5 หมวดคือ ข้อมูลพื้นฐาน, Statement of Purpose, เอกสารหลักฐานการศึกษา, ผลงาน, คำถามเพิ่มเติม",
+      "ผู้สมัครต้องส่งเอกสารประกอบการสมัครเป็นไฟล์ PDF รวม 1 ไฟล์ ไม่น้อยกว่า 1 หน้า และไม่เกิน 10 หน้า โดยมีขนาดไม่เกิน 20 MB",
+      "วันที่ 4 มีนาคม 2570 ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "วันที่ 7 มีนาคม 2570 สอบสัมภาษณ์ ณ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต",
+      "วันที่ 10 มีนาคม 2570 ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "วันที่ 10-11 มีนาคม 2570 ยืนยันสิทธิ์เข้าศึกษาผ่านระบบกลาง ทปอ.",
+      "วันที่ 22 มีนาคม 2570 ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา"
+    ]
+  },
+  {
+    "id": "ann-10",
+    "universityId": "tu",
+    "title": "Thammasat University: Interview Schedule and Contact Information",
+    "category": "Admission",
+    "date": "2026-03-04",
+    "deadline": "2026-03-22",
+    "link": "https://tcas.tuadmissions.in.th/user/booking",
+    "keywords": ["interview", "schedule", "contact", "thammasat", "tuadmissions"],
+    "faculty": "Faculty of Science and Technology",
+    "description": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์วันที่ 4 มีนาคม 2570 สอบสัมภาษณ์วันที่ 6 มีนาคม 2570 รูปแบบออนไลน์ และประกาศรายชื่อผู้ผ่านการคัดเลือกวันที่ 10 มีนาคม 2570 พร้อมข้อมูลการติดต่อของคณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์",
+    "details": [
+      "สอบสัมภาษณ์เวลา 09.00 – 12.00 น. (รูปแบบออนไลน์)",
+      "การรายงานตัวเวลา 08.30 น. เป็นต้นไป",
+      "สอบถามเพิ่มเติม: คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต โทรศัพท์ 02-5644440-59 ต่อ 2020, 2045, 2079",
+      "เว็บไซต์ www.sci.tu.ac.th อีเมล donut_sci@hotmail.com หรือ sr.naja2@gmail.com Facebook: Science & Technology Thammasat University Official"
+    ]
+  },
+  {
+    "id": "ann-3",
+    "universityId": "ku",
+    "title": "Scholarship for Outstanding Freshmen",
+    "category": "Scholarship",
+    "date": "2026-09-05",
+    "deadline": "2026-09-28",
+    "link": "https://www.ku.ac.th/",
+    "keywords": ["scholarship", "financial aid", "freshmen"],
+    "faculty": "Faculty of Economics"
+  },
+  {
+    "id": "ann-4",
+    "universityId": "mahidol",
+    "title": "Direct Admission Applications Now Open",
+    "category": "Direct Admission",
+    "date": "2026-09-01",
+    "deadline": "2026-10-04",
+    "link": "https://mahidol.ac.th/",
+    "keywords": ["direct admission", "health sciences", "application"],
+    "faculty": "Faculty of Medicine"
+  },
+  {
+    "id": "ann-5",
+    "universityId": "kmitl",
+    "title": "Smart Technology Admissions Intake Released",
+    "category": "Admission",
+    "date": "2026-08-30",
+    "deadline": "2026-09-25",
+    "link": "https://www.kmitl.ac.th/",
+    "keywords": ["engineering", "admission", "technology"],
+    "faculty": "School of Engineering"
+  },
+  {
+    "id": "ann-6",
+    "universityId": "kmutt",
+    "title": "Portfolio Submission Guidelines Updated",
+    "category": "Portfolio",
+    "date": "2026-08-28",
+    "deadline": "2026-09-19",
+    "link": "https://www.kmutt.ac.th/",
+    "keywords": ["portfolio", "creative design", "submission"],
+    "faculty": "School of Architecture"
+  },
+  {
+    "id": "ann-7",
+    "universityId": "kmutnb",
+    "title": "Quota Admission Information Session",
+    "category": "Quota",
+    "date": "2026-08-22",
+    "deadline": "2026-09-27",
+    "link": "https://www.kmutnb.ac.th/",
+    "keywords": ["quota", "regional admission", "session"],
+    "faculty": "Faculty of Industrial Education"
+  },
+  {
+    "id": "ann-8",
+    "universityId": "cmu",
+    "title": "CMU International Scholarship Round",
+    "category": "Scholarship",
+    "date": "2026-08-20",
+    "deadline": "2026-10-08",
+    "link": "https://www.cmu.ac.th/",
+    "keywords": ["scholarship", "international", "research"],
+    "faculty": "Faculty of Science"
+  }
+]
